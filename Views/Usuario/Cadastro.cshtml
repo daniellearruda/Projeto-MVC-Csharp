@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "Adicionar";
+}
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/Usuario/usuariocadastro.js"></script>
+<script src="~/Content/modalAjax/bootstrap.min.js"></script>
+<script src="~/Content/modalAjax/bootstrapcdn.min.js"></script>
+<script src="~/Content/modalAjax/ajaxmodaldeconfirmacaobootbox.min.js"></script>
+
+<div class="bs-callout bs-callout-primary">
+    <div class="box-header with-border">
+        <h3 class="box-title">Cadastrar Usuário</h3>
+    </div>
+    <div class="col-lg-6">
+        <form class="form-horizontal" id="Form" name="Form">
+            <input type="hidden" class="form-control" id="id" name="Id" value="@ViewBag.id">
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Nome</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="nome" name="Nome" placeholder="Nome..." onkeyup="maiuscula(this)">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Login</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="login" name="Login" placeholder="Login..." onkeyup="maiuscula(this)">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Senha</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="senha" name="Senha" placeholder="Empresa..." onkeyup="maiuscula(this)">
+                    </div>
+                </div>
+
+                
+
+
+                <div id="resposta" style="display:none;"></div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" id="recurso">Validações</label>
+                    <div class="col-lg-6">
+                        <button type="button" id="ValidaCadastro" class="btn btn-success" data-toggle="modal"> Salvar</button>
+                        <button id="Alterar" name="Alterar" class="btn btn-primary">Alterar</button>
+                        <button id="Excluir" name="Excluir" class="btn btn-danger">Excluir</button>
+                        <a href="/Usuario/Index" class="btn btn-default"> voltar</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">Confirmação</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Deseja salvar o cadastro?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" s data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="Salvar">Salvar Cadastro</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<br /><br />

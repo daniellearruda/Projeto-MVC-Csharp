@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="projetobaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Empresa">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Uf" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Cnpj" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NomeFantasia" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Fornecedor" Relationship="Self.FK_Fornecedor_Empresa" FromRole="Empresa" ToRole="Fornecedor" />
+  </EntityType>
+  <EntityType Name="Fornecedor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Cpf_Cnpj" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Data_Criacao" Type="DateTime" Precision="3" />
+    <Property Name="Usuario_Criacao" Type="DateTime" Precision="3" />
+    <Property Name="Telefone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Id_Empresa" Type="Int32" />
+    <Property Name="Data_Nascimento" Type="DateTime" Precision="3" />
+    <Property Name="RG" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Empresa" Relationship="Self.FK_Fornecedor_Empresa" FromRole="Fornecedor" ToRole="Empresa" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Login" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Senha" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <Association Name="FK_Fornecedor_Empresa">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="0..1" />
+    <End Role="Fornecedor" Type="Self.Fornecedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Fornecedor">
+        <PropertyRef Name="Id_Empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="projetobaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Empresa" EntityType="Self.Empresa" />
+    <EntitySet Name="Fornecedor" EntityType="Self.Fornecedor" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+    <AssociationSet Name="FK_Fornecedor_Empresa" Association="Self.FK_Fornecedor_Empresa">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Fornecedor" EntitySet="Fornecedor" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

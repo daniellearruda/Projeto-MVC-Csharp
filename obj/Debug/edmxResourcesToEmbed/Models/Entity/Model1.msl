@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="projetobaseModelStoreContainer" CdmEntityContainer="projetobaseEntities">
+    <EntitySetMapping Name="Empresa">
+      <EntityTypeMapping TypeName="projetobaseModel.Empresa">
+        <MappingFragment StoreEntitySet="Empresa">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Uf" ColumnName="Uf" />
+          <ScalarProperty Name="Cnpj" ColumnName="Cnpj" />
+          <ScalarProperty Name="NomeFantasia" ColumnName="NomeFantasia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fornecedor">
+      <EntityTypeMapping TypeName="projetobaseModel.Fornecedor">
+        <MappingFragment StoreEntitySet="Fornecedor">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Cpf_Cnpj" ColumnName="Cpf_Cnpj" />
+          <ScalarProperty Name="Data_Criacao" ColumnName="Data_Criacao" />
+          <ScalarProperty Name="Usuario_Criacao" ColumnName="Usuario_Criacao" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+          <ScalarProperty Name="Id_Empresa" ColumnName="Id_Empresa" />
+          <ScalarProperty Name="Data_Nascimento" ColumnName="Data_Nascimento" />
+          <ScalarProperty Name="RG" ColumnName="RG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="projetobaseModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Senha" ColumnName="Senha" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

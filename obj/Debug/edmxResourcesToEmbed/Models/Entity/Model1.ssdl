@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="projetobaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Empresa">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Uf" Type="char" MaxLength="2" />
+    <Property Name="Cnpj" Type="varchar" MaxLength="20" />
+    <Property Name="NomeFantasia" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Fornecedor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="150" />
+    <Property Name="Cpf_Cnpj" Type="varchar" MaxLength="20" />
+    <Property Name="Data_Criacao" Type="datetime" />
+    <Property Name="Usuario_Criacao" Type="datetime" />
+    <Property Name="Telefone" Type="varchar" MaxLength="20" />
+    <Property Name="Id_Empresa" Type="int" />
+    <Property Name="Data_Nascimento" Type="datetime" />
+    <Property Name="RG" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="50" />
+    <Property Name="Login" Type="varchar" MaxLength="20" />
+    <Property Name="Senha" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <Association Name="FK_Fornecedor_Empresa">
+    <End Role="Empresa" Type="Self.Empresa" Multiplicity="0..1" />
+    <End Role="Fornecedor" Type="Self.Fornecedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Fornecedor">
+        <PropertyRef Name="Id_Empresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="projetobaseModelStoreContainer">
+    <EntitySet Name="Empresa" EntityType="Self.Empresa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fornecedor" EntityType="Self.Fornecedor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Fornecedor_Empresa" Association="Self.FK_Fornecedor_Empresa">
+      <End Role="Empresa" EntitySet="Empresa" />
+      <End Role="Fornecedor" EntitySet="Fornecedor" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

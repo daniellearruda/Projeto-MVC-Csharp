@@ -1,0 +1,109 @@
+﻿
+@{
+    ViewBag.Title = "Adicionar";
+}
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/Empresa/empresacadastro.js"></script>
+<script src="~/Content/modalAjax/bootstrap.min.js"></script>
+<script src="~/Content/modalAjax/bootstrapcdn.min.js"></script>
+<script src="~/Content/modalAjax/ajaxmodaldeconfirmacaobootbox.min.js"></script>
+
+<div class="bs-callout bs-callout-primary">
+    <div class="box-header with-border">
+        <h3 class="box-title">Cadastrar Empresa</h3>
+    </div>
+    <div class="col-lg-6">
+        <form class="form-horizontal" id="Form" name="Form">
+            <input type="hidden" class="form-control" id="id" name="Id" value="@ViewBag.id">
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">UF</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" id="uf" name="Uf">
+                            <option value="">Selecione</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espirito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">CNPJ</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="cnpj" name="Cnpj" placeholder="CNPJ..." onkeyup="maiuscula(this)">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Nome Fantasia</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="nomeFantasia" name="NomeFantasia" placeholder="Empresa..." onkeyup="maiuscula(this)">
+                    </div>
+                </div>
+
+
+
+                <div id="resposta" style="display:none;"></div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" id="recurso">Validações</label>
+                    <div class="col-lg-6">
+                        <button type="button" id="ValidaCadastro" class="btn btn-success" data-toggle="modal"> Salvar</button>
+                        <button id="Alterar" name="Alterar" class="btn btn-primary">Alterar</button>
+                        <button id="Excluir" name="Excluir" class="btn btn-danger">Excluir</button>
+                        <a href="/Empresa/Index" class="btn btn-default"> voltar</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">Confirmação</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Deseja salvar o cadastro?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" s data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="Salvar">Salvar Cadastro</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<br /><br />
