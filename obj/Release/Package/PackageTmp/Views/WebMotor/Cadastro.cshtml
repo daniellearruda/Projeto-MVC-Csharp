@@ -3,69 +3,51 @@
     ViewBag.Title = "Adicionar";
 }
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
-<script src="~/Scripts/Fornecedor/fornecedorcadastro.js"></script>
+<script src="~/Scripts/WebMotor/webmotorcadastro.js"></script>
 <script src="~/Content/modalAjax/bootstrap.min.js"></script>
 <script src="~/Content/modalAjax/bootstrapcdn.min.js"></script>
 <script src="~/Content/modalAjax/ajaxmodaldeconfirmacaobootbox.min.js"></script>
 
 <div class="bs-callout bs-callout-primary">
     <div class="box-header with-border">
-        <h3 class="box-title">Cadastrar Fornecedor</h3>
+        <h3 class="box-title">Cadastrar</h3>
     </div>
     <div class="col-lg-6">
         <form class="form-horizontal" id="Form" name="Form">
-            <input type="hidden" class="form-control" id="id" name="Id" value="@ViewBag.id">
+            <input type="hidden" class="form-control" id="Id" name="Id" value="@ViewBag.Id">
             <div class="box-body">
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">Tipo de Fornecedor</label>
+                    <label for="inputEmail3" class="col-sm-2 control-label">Marca</label>
                     <div class="col-sm-10">
-                        <select class="form-control" id="tipo">
-                            <option value="0">Selecione...</option>
-                            <option value="J">Jurídico</option>
-                            <option value="F">Físico</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">Empresa</label>
-                    <div class="col-sm-10">
-                        <select class="form-control" id="empresa" name="Id_Empresa"></select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">Nome</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="nome" name="Nome" placeholder="Nome..." onkeyup="maiuscula(this)">
+                        <select id="marca" class="form-control"></select>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">CNPJ/CPF</label>
+                    <label for="inputEmail3" class="col-sm-2 control-label">Modelo</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="cnpj" name="Cpf_Cnpj" placeholder="CIC.." onkeyup="maiuscula(this)">
-                    </div>
-                </div>
-
-              
-                <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">Telefone</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="telefone" name="Telefone" placeholder="Telefone..." onkeyup="maiuscula(this)">
+                        <select id="modelo" class="form-control"></select>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">Data Nascimento</label>
+                    <label for="inputEmail3" class="col-sm-2 control-label">Versão</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="dataNascimento" name="Data_Nascimento" placeholder="Data Nascimento..." onkeyup="maiuscula(this)">
-                        <span class="label label-danger" id="errodata"></span>
+                        <select id="versao" class="form-control"></select>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputEmail3" class="col-sm-2 control-label">RG</label>
+                    <label for="inputEmail3" class="col-sm-2 control-label">KM</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="rg" name="RG" placeholder="Rg..." onkeyup="somenteNumeros(this)">
+                        <select id="quiAno" class="form-control"></select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">Obs</label>
+                    <div class="col-sm-10">
+                        <textarea id="obs" class="form-control"></textarea>
                     </div>
                 </div>
 
@@ -76,8 +58,10 @@
                         <button type="button" id="ValidaCadastro" class="btn btn-success" data-toggle="modal"> Salvar</button>
                         <button id="Alterar" name="Alterar" class="btn btn-primary">Alterar</button>
                         <button id="Excluir" name="Excluir" class="btn btn-danger">Excluir</button>
-                        <a href="/Fornecedor/Index" class="btn btn-default"> voltar</a>
+
                     </div>
+                    <br />
+                    <a href="/WebMotor/Index" class="btn btn-default"> voltar</a>
                 </div>
             </div>
 

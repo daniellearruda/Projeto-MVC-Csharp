@@ -137,20 +137,17 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\EmpresaController.cs" />
-    <Compile Include="Controllers\FornecedorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PrincipalController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Controllers\WebMotorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DAO\EmpresaDAO.cs" />
-    <Compile Include="Models\DAO\FornecedorDAO.cs" />
     <Compile Include="Models\DAO\UsuarioDAO.cs" />
-    <Compile Include="Models\Entity\Empresas.cs" />
-    <Compile Include="Models\Entity\Fornecedores.cs" />
+    <Compile Include="Models\DAO\WebMotorDAO.cs" />
     <Compile Include="Models\Entity\Usuario.cs" />
+    <Compile Include="Models\Entity\WebMotor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -7114,10 +7111,8 @@
     <Content Include="Content\jquery-ui-1.12.1.custom\package.json" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
-    <Content Include="Scripts\Empresa\empresa.js" />
-    <Content Include="Scripts\Empresa\empresacadastro.js" />
-    <Content Include="Scripts\Fornecedor\fornecedor.js" />
-    <Content Include="Scripts\Fornecedor\fornecedorcadastro.js" />
+    <Content Include="Scripts\WebMotor\webmotor.js" />
+    <Content Include="Scripts\WebMotor\webmotorcadastro.js" />
     <Content Include="Scripts\jqGrid\css\ui.jqgrid-bootstrap-ui.css" />
     <Content Include="Scripts\jqGrid\css\ui.jqgrid-bootstrap.css" />
     <Content Include="Scripts\jqGrid\css\ui.jqgrid-bootstrap4.css" />
@@ -7272,20 +7267,17 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Principal\Index.cshtml" />
+    <Content Include="Views\Usuario\Cadastro.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Principal\Index.cshtml" />
-    <Content Include="Views\Empresa\Index.cshtml" />
-    <Content Include="Views\Empresa\Cadastro.cshtml" />
-    <Content Include="Views\Fornecedor\Cadastro.cshtml" />
-    <Content Include="Views\Fornecedor\Index.cshtml" />
-    <Content Include="Views\Usuario\Cadastro.cshtml" />
-    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\WebMotor\Index.cshtml" />
+    <Content Include="Views\WebMotor\Cadastro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

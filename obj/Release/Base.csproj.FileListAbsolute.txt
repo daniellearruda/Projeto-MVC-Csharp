@@ -88,3 +88,4 @@ C:\Users\danie\OneDrive\Área de Trabalho\BASE\Base\Base\obj\Release\Base.csproj
 C:\Users\danie\OneDrive\Área de Trabalho\BASE\Base\Base\obj\Release\Base.csproj.CopyComplete
 C:\Users\danie\OneDrive\Área de Trabalho\BASE\Base\Base\obj\Release\Base.dll
 C:\Users\danie\OneDrive\Área de Trabalho\BASE\Base\Base\obj\Release\Base.pdb
+C:\Users\danie\OneDrive\Área de Trabalho\BASE\Base\Base\obj\Release\Base.csprojAssemblyReference.cache

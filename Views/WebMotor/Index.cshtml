@@ -7,24 +7,27 @@
 <link href="~/Scripts/jqGrid/css/ui.jqgrid.css" rel="stylesheet" />
 <script src="~/Scripts/jqGrid/js/i18n/grid.locale-pt-br.js"></script>
 <script src="~/Scripts/jqGrid/js/jquery.jqGrid.min.js"></script>
-<script src="~/Scripts/Empresa/empresa.js"></script>
+<script src="~/Scripts/WebMotor/webmotor.js"></script>
 
 <div class="box-header with-border">
     <h4 class="box-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-            Lista de Empresa
+            Lista de Usuarios
         </a>
     </h4>
 </div>
-<br />
-<form action="~/Empresa/Cadastro/0">
-    <button id="Novo" type="submit" name="novo" class="btn btn-primary">Nova Empresa</button>
-</form>
-<br />
-<div id="alertaAlterar" class="bg-yellow disabled color-palette">
-    <span>Dê Um <font color="red"> <b>DUPLO </b></font>  click na linha da tabela para <font color="red"><b>ALTERAR O REGISTRO</b></font></span>
 
-</div>
+<br />
+<form action="~/WebMotor/Cadastro/0">
+    <button id="Novo" type="submit" name="novo" class="btn btn-primary">Novo Cadastro</button>
+</form>
+
+<br />
+
+<div id="alertaAlterar" class="bg-yellow disabled color-palette">
+    <span>Dê Um <font color="red"> <b>DUPLO </b></font> DUPLO click na linha da tabela para <font color="red"><b>ALTERAR OU EXCLUIR REGISTRO</b></font></span>
+ </div>
+
 <br />
 <table id="jqGrid"></table>
 <div id="jqGridPager"></div>

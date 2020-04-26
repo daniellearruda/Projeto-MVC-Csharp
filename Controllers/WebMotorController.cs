@@ -1,4 +1,5 @@
 ﻿using Base.Models.DAO;
+using Base.Models.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,9 @@ namespace Base.Controllers
 {
     //TODO CONTROLADOR PASSARÁ A HERDAR DO CONTROLLER BASECONTROLLER
     //DESSA FORMA TEMOS A CERTEZA QUE SÓ USUARIOS LOGADOS ENTRÃO NOS MÉTODOS
-    public class EmpresaController : BaseController
+    public class WebMotorController : BaseController
     {
-        // GET: Empresa
-        EmpresaDAO DAO = new EmpresaDAO();
+        WebMotorDAO DAO = new WebMotorDAO();
 
         public ActionResult Index()
         {
@@ -25,38 +25,37 @@ namespace Base.Controllers
             var lista = DAO.Listar(0).ToList();
             return Json(new { rows = lista }, JsonRequestBehavior.AllowGet);
         }
+
         public ActionResult Cadastro(int id)
         {
             ViewBag.Id = id;
             return View();
         }
+
         public JsonResult CarregaDados(int id)
         {
-            var lista =  DAO.Listar(id).ToList();
+            var lista = DAO.Listar(id).ToList();
             return Json(lista, JsonRequestBehavior.AllowGet);
         }
 
-        // POST: UsuarioExterno/ Criar
         [HttpPost]
-        public JsonResult Salvar(Empresas u)
+        public JsonResult Salvar(string marca, string modelo, string versao, int ano, string km, string obs)
         {
-            DAO.Salvar(u);
+            DAO.Salvar( marca,  modelo,  versao,  ano,  km,  obs);
             return Json("Dados salvo com sucesso!!");
         }
 
-        // PUT: UsuarioExterno/ Criar
         [HttpPut]
-        public JsonResult Editar(Empresas u)
+        public JsonResult Editar(int Id, string marca, string modelo, string versao, int ano, string km, string obs)
         {
-            DAO.Editar(u);
+            DAO.Editar(Id, marca, modelo,versao, ano, km, obs);
             return Json("Dados alterado com sucesso!!");
         }
 
-        //Exclusão lógica
         [HttpDelete]
-        public JsonResult Exclusao(int id)
+        public JsonResult Exclusao(int Id)
         {
-            DAO.Exclusao(id);
+            DAO.Exclusao(Id);
             return Json("Excluido com sucesso");
         }
     }

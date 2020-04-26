@@ -16,10 +16,10 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>09/10/2013 16:29:20</publishTime>
     </File>
     <File Include="bin/Base.dll">
-      <publishTime>03/19/2019 23:50:58</publishTime>
+      <publishTime>04/26/2020 11:52:43</publishTime>
     </File>
     <File Include="bin/Base.pdb">
-      <publishTime>03/19/2019 23:50:58</publishTime>
+      <publishTime>04/26/2020 11:52:43</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>06/07/2018 11:03:48</publishTime>
@@ -21561,6 +21561,12 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
     <File Include="Scripts/Utils.js">
       <publishTime>03/19/2019 16:07:10</publishTime>
     </File>
+    <File Include="Scripts/WebMotor/webmotor.js">
+      <publishTime>04/26/2020 11:05:20</publishTime>
+    </File>
+    <File Include="Scripts/WebMotor/webmotorcadastro.js">
+      <publishTime>04/26/2020 11:45:11</publishTime>
+    </File>
     <File Include="Views/Empresa/Cadastro.cshtml">
       <publishTime>03/19/2019 14:42:50</publishTime>
     </File>
@@ -21583,13 +21589,13 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
       <publishTime>03/18/2019 12:45:34</publishTime>
     </File>
     <File Include="Views/Principal/Index.cshtml">
-      <publishTime>03/19/2019 20:13:11</publishTime>
+      <publishTime>04/25/2020 21:41:46</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>03/17/2019 16:37:18</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>03/19/2019 22:20:12</publishTime>
+      <publishTime>04/25/2020 21:51:31</publishTime>
     </File>
     <File Include="Views/Usuario/Cadastro.cshtml">
       <publishTime>03/19/2019 23:20:05</publishTime>
@@ -21600,11 +21606,17 @@ ao editar este arquivo MSBuild. Para saber mais sobre isso, visite https://go.mi
     <File Include="Views/Web.config">
       <publishTime>03/17/2019 16:37:18</publishTime>
     </File>
+    <File Include="Views/WebMotor/Cadastro.cshtml">
+      <publishTime>04/26/2020 11:43:04</publishTime>
+    </File>
+    <File Include="Views/WebMotor/Index.cshtml">
+      <publishTime>04/26/2020 10:48:34</publishTime>
+    </File>
     <File Include="Views/_ViewStart.cshtml">
       <publishTime>03/17/2019 16:37:18</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/19/2019 23:51:06</publishTime>
+      <publishTime>04/26/2020 11:52:58</publishTime>
     </File>
   </ItemGroup>
 </Project>
